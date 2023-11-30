@@ -1,0 +1,24 @@
+.cardContainer {
+    margin: 15px;
+}
+
+
+.img {
+    width: 350px;
+    height: 350px;
+    border-radius: 10px;
+}
+
+.dataContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.data {
+    text-align: c;
+    font-size: 15px;
+}
+
+.info {
+    font-size: 15px;
+}
