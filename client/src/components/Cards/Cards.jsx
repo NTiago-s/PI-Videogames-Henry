@@ -1,8 +1,14 @@
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import Card from '../Card/Card';
 import styles from "./Cards.module.css";
+import { paginateGames } from '../../redux/Actions/actions';
 const Cards = () => {
     const videoGames = useSelector((state) => state.videoGames);
+    const dispatch = useDispatch()
+
+    const paginate = (event) => {
+        dispatch(paginateGames(event.target.name));
+    }
     return (
         <div className={styles.boxCards}>
             {
@@ -20,7 +26,8 @@ const Cards = () => {
                     />
                 })
             }
-        </div>
+        </div >
+
     );
 }
 

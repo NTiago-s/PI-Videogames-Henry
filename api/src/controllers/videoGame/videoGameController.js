@@ -83,16 +83,27 @@ const videoGamesNameController = async (name) => {
     }
 }
 
+const findGameByNameController = async (name) => {
+    try {
+        const existingGame = await Videogame.findOne({ where: { name } });
+        return existingGame;
+    } catch (error) {
+        throw new Error('Error al buscar el juego por nombre.');
+    }
+}
+
+
 const createNewGameController = async (name, platforms, genres, image, description, released, rating) => {
     try {
         if (!genres.length) {
             throw new Error('You must provide at least one genre');
         }
         const genre = await Genre.findAll({ where: { name: genres } });
+        const imageUrl = image ? image : 'https://img.freepik.com/fotos-premium/ilustracion-joystick-gamepad-controlador-juegos-cyberpunk_691560-5812.jpg';
         const newVideoGame = await Videogame.create({
             name,
             platforms,
-            image,
+            image: imageUrl,
             description,
             released,
             rating,
@@ -109,4 +120,5 @@ module.exports = {
     videoGamesIdController,
     videoGamesNameController,
     createNewGameController,
+    findGameByNameController,
 }

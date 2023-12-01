@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { getAllGenres } from "../../redux/Actions/actions";
 import Validation from './validation';
 import axios from "axios";
-import styles from "./form.module.css"
+import style from "./form.module.css"
 
 const Form = () => {
     const genres = useSelector((state) => state.genres);
@@ -68,117 +68,131 @@ const Form = () => {
         }
     };
     return (
-        <div className={styles.box}>
-            <div className={styles.formContainer}>
+        <div className={style.box}>
+            <div className={style.formContainer}>
                 <h2>Videogame Registration</h2>
                 <form encType="multipart/form-data" onSubmit={handleSubmit}>
                     <hr />
-                    <div>
-                        <label>Name:
-                            <input
-                                value={form.name}
-                                type="text"
-                                name="name"
-                                autoComplete="name"
-                                onChange={changeHandler}
-                                styles={{ borderColor: errors.name ? 'red' : 'initial' }}>
-                            </input>
+                    <div className={style.formSection}>
+                        <label className={style.label}>Name:
+                            <div>
+                                <input
+                                    value={form.name}
+                                    type="text"
+                                    name="name"
+                                    autoComplete="name"
+                                    onChange={changeHandler}
+                                    className={style.input}>
+                                </input>
+                            </div>
                             {errors.name && <p>{errors.name}</p>}
                         </label>
                     </div>
 
-                    <div>
-                        <label>Platforms:
-                            <input
-                                value={form.platforms}
-                                type="text"
-                                name="platforms"
-                                onChange={changeHandler}
-                                styles={{
-                                    borderColor: errors.platforms
-                                        ? 'red'
-                                        : 'initial'
-                                }}>
-                            </input>
+                    <div className={style.formSection}>
+                        <label className={style.label}>Platforms:
+                            <div>
+
+                                <input
+                                    value={form.platforms}
+                                    type="text"
+                                    name="platforms"
+                                    onChange={changeHandler}
+                                    className={style.input}>
+                                </input>
+                            </div>
                             {errors.platforms && <p>{errors.platforms}</p>}
                         </label>
                     </div>
 
-                    <div>
-                        <label>Genres:
-                            <select
-                                value={form.genres}
-                                name="genres"
-                                // multiple
-                                onChange={changeHandler}>
-                                <option>⬇</option>
-                                {genres.map((genre) => (
-                                    <option
-                                        // type="input"
-                                        key={genre.id}
-                                        value={genre.name}>
-                                        {genre.name}
-                                    </option>
-                                ))}
-                            </select>
+                    <div className={style.formSection}>
+                        <label className={style.label}>Genres:
+                            <div>
+                                <select
+                                    value={form.genres}
+                                    name="genres"
+                                    multiple
+                                    onChange={changeHandler}
+                                    className={style.select}>
+                                    <option>⬇</option>
+                                    {genres.map((genre) => (
+                                        <option
+                                            key={genre.id}
+                                            value={genre.name}>
+                                            {genre.name},
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
                             {errors.genres && <p>{errors.genres}</p>}
                         </label>
                     </div>
 
-                    <div>
-                        <label>Rating:
-                            <input
-                                value={form.rating}
-                                type="number"
-                                name="rating"
-                                step="0.1"
-                                onChange={changeHandler}>
-                            </input>
+                    <div className={style.formSection}>
+                        <label className={style.label}>Rating:
+                            <div>
+                                <input
+                                    value={form.rating}
+                                    type="number"
+                                    name="rating"
+                                    step="0.1"
+                                    onChange={changeHandler}
+                                    className={style.input}>
+                                </input>
+                            </div>
                             {errors.rating && <p>{errors.rating}</p>}
                         </label>
                     </div>
 
-                    <div>
-                        <label>Image:
-                            <input
-                                value={form.image}
-                                type="text"
-                                name="image"
-                                placeholder="Enter Image URL"
-                                onChange={changeHandler}
-                            />
+                    <div className={style.formSection}>
+                        <label className={style.label}>Image:
+                            <div>
+                                <input
+                                    value={form.image}
+                                    type="text"
+                                    name="image"
+                                    placeholder="Enter Image URL"
+                                    onChange={changeHandler}
+                                    className={style.input}
+                                />
+                            </div>
                             {errors.image && <p>{errors.image}</p>}
                         </label>
                     </div>
 
-                    <hr />
 
-                    <div>
-                        <label>Released:
-                            <input
-                                value={form.released}
-                                type="date"
-                                name="released"
-                                autoComplete="off"
-                                onChange={changeHandler}>
-                            </input>
+                    <div className={style.formSection}>
+                        <label className={style.label}>Released:
+                            <div>
+                                <input
+                                    value={form.released}
+                                    type="date"
+                                    name="released"
+                                    autoComplete="off"
+                                    onChange={changeHandler}
+                                    className={style.input}>
+                                </input>
+                            </div>
                             {errors.released && <p>{errors.released}</p>}
                         </label>
                     </div>
 
-                    <div>
-                        <label>Description:
-                            <textarea
-                                value={form.description}
-                                name="description"
-                                rows="4"
-                                onChange={changeHandler}>
-                            </textarea>
+                    <div className={style.formSection}>
+                        <label className={style.label}>Description:
+                            <div>
+                                <textarea
+                                    value={form.description}
+                                    name="description"
+                                    rows="4"
+                                    onChange={changeHandler}
+                                    className={style.textarea}>
+                                </textarea>
+                            </div>
                             {errors.description && <p>{errors.description}</p>}
                         </label>
                     </div>
-
-                    <button className={styles.submit} type="submit">Register</button>
+                    <hr />
+                    <button className={style.submit} type="submit" >Save New Game</button>
                 </form>
             </div>
         </div>

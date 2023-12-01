@@ -1,0 +1,40 @@
+.search {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 15px;
+}
+
+.input {
+    width: 100%;
+    font-size: 18px;
+    background-color: #222;
+    color: #fff;
+    border-radius: 10px;
+    margin-right: 10px;
+    text-align: left;
+    cursor: text;
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 0;
+}
+
+.input::placeholder {
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+.button {
+    border-radius: 10px;
+    font-size: 18px;
+    background-color: #0f8;
+    color: #000;
+    margin-left: 15px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.icon {
+    font-size: 20px;
+}

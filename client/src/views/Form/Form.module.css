@@ -1,0 +1,54 @@
+.box {
+    margin: 0 200px;
+    display: grid;
+    text-align: center;
+    grid-template-columns: 350px 350px;
+    grid-template-rows: 120px 1fr 1fr 120px;
+    grid-template-areas:
+        "Form Form"
+        "Form Form"
+    ;
+}
+
+.formSection {
+    margin-bottom: 20px;
+}
+
+.formContainer {
+    grid-area: Form;
+    padding: 20px;
+}
+
+.label {
+    font-size: 25px;
+}
+
+.input {
+    font-size: 15px;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.select {
+    font-size: 18px;
+    background-color: #ddd;
+    color: #000;
+}
+
+.textarea {
+    font-size: 18px;
+    background-color: #ddd;
+    color: #000;
+}
+
+.submit {
+    margin: 10px;
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

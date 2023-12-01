@@ -1,6 +1,7 @@
 .boxCards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    max-width: 1200px;
+    gap: 16px;
+    margin: auto;
 }

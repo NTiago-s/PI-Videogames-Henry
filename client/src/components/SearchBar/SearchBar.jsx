@@ -22,7 +22,9 @@ const SearchBar = () => {
                 setErrors(error.message)
             });
         setSearchName('')
+        setErrors('')
     };
+
 
 
 
@@ -30,14 +32,15 @@ const SearchBar = () => {
         <div className={styles.search}>
             {errors && <p>{errors}</p>}
             <input
-                type='search'
+                type='text'
                 name="searchBar"
-                placeholder="Search VideoGame"
                 value={searchName}
                 onChange={inputChange}
+                className={styles.input}
+                placeholder="Search VideoGames"
             />
-            <button>
-                <FontAwesomeIcon icon={faMagnifyingGlass} onClick={searchHand} />
+            <button className={styles.button}>
+                <FontAwesomeIcon icon={faMagnifyingGlass} onClick={searchHand} className={styles.icon} />
             </button>
         </div>
     )

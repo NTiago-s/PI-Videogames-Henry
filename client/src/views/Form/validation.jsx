@@ -1,6 +1,7 @@
 const Validation = (input) => {
     let errors = {};
-    const platformsRegex = /^\s*[a-zA-Z0-9]+\s*(?:,\s*[a-zA-Z0-9]+\s*)*$/;
+    const platformsRegex = /^[a-zA-Z0-9]+(?:,\s*[a-zA-Z0-9]+)*$/;
+
     if (!input.name) {
         errors.name = "Please enter a name";
     } else if (input.name.length >= 40) {
@@ -13,8 +14,7 @@ const Validation = (input) => {
 
     if (!input.platforms) {
         errors.platforms = "Please specify at least one platform";
-    }
-    if (!platformsRegex.test(input.platforms)) {
+    } else if (!platformsRegex.test(input.platforms)) {
         errors.platforms = "Each platform must be separated by a comma";
     }
 
@@ -35,7 +35,10 @@ const Validation = (input) => {
         }
     }
 
-    return errors;
-}
+    if (input.image && !isValidUrl(input.image)) {
+        errors.image = "Please enter a valid image URL";
+    }
 
+    return errors;
+};
 export default Validation;

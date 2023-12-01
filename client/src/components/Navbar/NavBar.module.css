@@ -1,0 +1,50 @@
+.navbar {
+    height: auto;
+    width: auto;
+    border: 1px solid #fff;
+    text-align: center;
+    margin-left: 20px;
+}
+
+.option {
+    margin: 60px auto;
+    cursor: pointer;
+}
+
+.filterButton {
+    font-size: 15px;
+    border-radius: 3px;
+    padding: 7px;
+    cursor: pointer;
+    text-align: center;
+    background: #0f8;
+    color: #000;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.filter {
+    font-size: 15px;
+    border-radius: 3px;
+    padding: 7px;
+    cursor: pointer;
+    text-align: center;
+    background: #ddd;
+    color: #000;
+}
+
+.H5 {
+    margin: 40px auto;
+    font-size: 30px;
+    font-family: Super Summmer;
+    text-decoration: underline;
+}
+
+.button {
+    margin: 10px;
+    padding: 10px;
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: #0f8;
+    border-radius: 7px;
+    cursor: pointer;
+}

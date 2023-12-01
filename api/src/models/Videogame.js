@@ -25,7 +25,7 @@ module.exports = (sequelize) => {
     image: {
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: 'https://i.ytimg.com/vi/b9mTQ9LOs9k/maxresdefault.jpg'
+      defaultValue: 'https://img.freepik.com/fotos-premium/ilustracion-joystick-gamepad-controlador-juegos-cyberpunk_691560-5812.jpg'
     },
     released: {
       type: DataTypes.DATEONLY,

@@ -1,0 +1,75 @@
+.Detail {
+    display: grid;
+    text-align: center;
+    grid-template-columns: 300px 1fr 350px;
+    grid-template-rows: 120px 1fr 1fr 120px;
+    grid-template-areas:
+        "name name name"
+        "image image data"
+        "description description description"
+        "description description description"
+    ;
+}
+
+
+
+.image {
+    grid-area: image;
+    width: 600px;
+    margin: 30px;
+}
+
+.nameBox {
+    grid-area: name;
+    margin: 20px;
+}
+
+.name {
+    font-size: 50px;
+}
+
+.data {
+    width: 100%;
+    grid-area: data;
+    font-size: 25px;
+    margin: 20px;
+    text-align: left;
+}
+
+.id {
+    margin: auto 20px;
+}
+
+.platforms {
+    margin: 20px;
+}
+
+.genre {
+    margin: 20px;
+}
+
+.released {
+    margin: 20px;
+}
+
+.rating {
+    font-size: 18px;
+    margin: 20px;
+}
+
+
+.descriptionBox {
+    grid-area: description;
+    margin: 20px;
+}
+
+.titleDescription {
+    text-align: center;
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+.description {
+    font-size: 18px;
+    word-spacing: 5px;
+}

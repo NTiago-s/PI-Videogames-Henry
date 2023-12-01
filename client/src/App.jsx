@@ -10,7 +10,7 @@ const App = () => {
       <div className={style.Landing}>
         {location.pathname === "/" && <Landing />}
       </div>
-      <div className={style.appContainer}>
+      {location.pathname !== '/' && <div className={style.appContainer}>
         <div className={style.searchBar}>
           {location.pathname !== "/" && location.pathname !== "/form"
             && <SearchBar />}
@@ -18,14 +18,13 @@ const App = () => {
         <div className={style.navBar}>
           {location.pathname !== "/" && <NavBar />}
         </div>
-        <div className={style.Routes}>
-          <Routes>
-            <Route path="/form" element={<Form />} />
-            <Route path="/detail/:id" element={<Detail />} />
-            <Route path="/home" element={<Home />} />
-          </Routes>
-        </div>
+        <Routes>
+          <Route path="/form" element={<Form />} />
+          <Route path="/detail/:id" element={<Detail />} />
+          <Route exac path="/home" element={<Home />} />
+        </Routes>
       </div>
+      }
     </div>
   )
 }

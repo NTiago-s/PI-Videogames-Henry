@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { clearDetail, getDetail } from "../../redux/Actions/actions";
-
+import style from './Detail.module.css'
 const Detail = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
@@ -18,15 +18,24 @@ const Detail = () => {
 
     return (
         <div>
-            <div>
-                <img src={detail.image} alt="" />
-                <h2>Name: {detail.name}</h2>
-                <h2>Id: {detail.id}</h2>
-                <p>Platforms: {detail.platforms}</p>
-                <p>Genres: {genres?.map(genre => <span>{genre} </span>)}</p>
-                <p>Released: {detail.released}</p>
-                <h6>Rating <span>{detail.rating}</span></h6>
-                <p>Description: {detail.description}</p>
+            <div className={style.Detail}>
+                <div className={style.nameBox} >
+                    <h2 className={style.name}>Name: {detail.name}</h2>
+                    <hr />
+                </div>
+                <img src={detail.image} alt="" className={style.image} />
+                <div className={style.data}>
+                    <h2 className={style.id}>ID: {detail.id}</h2>
+                    <p className={style.platforms}>PLATFORMS: {detail.platforms}</p>
+                    <p className={style.genre}>GENRES: {genres?.map(genre => <span>[{genre}] </span>)}</p>
+                    <p className={style.released}>RELEASED: {detail.released}</p>
+                    <h6 className={style.rating}>RATING: <span>{detail.rating}</span></h6>
+                </div>
+                <div className={style.descriptionBox}>
+                    <hr />
+                    <p className={style.titleDescription}> DESCRIPTION</p>
+                    <p className={style.description}>{detail.description}</p>
+                </div>
             </div>
         </div>
     )
