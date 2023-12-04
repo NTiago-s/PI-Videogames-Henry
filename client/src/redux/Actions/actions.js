@@ -14,7 +14,6 @@ import {
 import axios from 'axios'
 
 //* funciones peticiones al backend
-
 export const getAllVideoGames = () => {
     try {
         return async (dispatch) => {
@@ -28,6 +27,20 @@ export const getAllVideoGames = () => {
         throw Error({ error: error.message });
     }
 }
+
+// export const getAllVideoGames = () => async (dispatch) => {
+//     try {
+//         const response = await axios.get('http://localhost:3001/videogames');
+//         const data = response.data;
+//         dispatch({
+//             type: GET_ALLVIDEOGAMES,
+//             payload: data,
+//         });
+//     } catch (error) {
+//         throw new Error(error.message);
+//     }
+// };
+
 
 export const getDetail = (id) => {
     return async (dispatch) => {

@@ -29,7 +29,7 @@ const Detail = () => {
                 <div className={style.data}>
                     <h2 className={style.id}>ID: {detail.id}</h2>
                     <p className={style.platforms}>PLATFORMS: {detail.platforms}</p>
-                    <p className={style.genreBox}>GENRES: {genres?.map(genre => <span className={style.genreSpan} key={genre.id}>{genre} </span>)}</p>
+                    <p className={style.genreBox}>GENRES: {genres?.map((genre, index) => <span className={style.genreSpan} key={index}>{genre} </span>)}</p>
                     <p className={style.released}>RELEASED: {detail.released}</p>
                     <h6 className={style.rating}>RATING: <span className={style.ratingSpan}>{detail.rating}</span></h6>
                 </div>

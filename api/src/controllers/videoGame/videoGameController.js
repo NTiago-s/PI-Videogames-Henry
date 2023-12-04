@@ -51,16 +51,13 @@ const AllVideoGames = async () => {
 //             const apiGames = cleanVideoGame(videoGames);
 //             return [...games, ...apiGames];
 //         }, []);
-
 //         const dbVideoGames = await Videogame.findAll({
 //             include: {
 //                 model: Genre,
 //                 attributes: ['name']
 //             }
 //         });
-
 //         const cleanGame = cleanVideoGameDB(dbVideoGames);
-
 //         return [...cleanGame, ...resultGames];
 //     } catch (error) {
 //         throw error;
