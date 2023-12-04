@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { clearDetail, getDetail } from "../../redux/Actions/actions";
 import style from './Detail.module.css'
+
+//* componente con el detail al maximo de un juego
 const Detail = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
@@ -17,7 +19,7 @@ const Detail = () => {
 
 
     return (
-        <div>
+        <div className={style.boxDetail}>
             <div className={style.Detail}>
                 <div className={style.nameBox} >
                     <h2 className={style.name}>Name: {detail.name}</h2>
@@ -27,9 +29,9 @@ const Detail = () => {
                 <div className={style.data}>
                     <h2 className={style.id}>ID: {detail.id}</h2>
                     <p className={style.platforms}>PLATFORMS: {detail.platforms}</p>
-                    <p className={style.genre}>GENRES: {genres?.map(genre => <span>[{genre}] </span>)}</p>
+                    <p className={style.genreBox}>GENRES: {genres?.map(genre => <span className={style.genreSpan}>{genre} </span>)}</p>
                     <p className={style.released}>RELEASED: {detail.released}</p>
-                    <h6 className={style.rating}>RATING: <span>{detail.rating}</span></h6>
+                    <h6 className={style.rating}>RATING: <span className={style.ratingSpan}>{detail.rating}</span></h6>
                 </div>
                 <div className={style.descriptionBox}>
                     <hr />

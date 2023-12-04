@@ -5,6 +5,7 @@ import Validation from './validation';
 import axios from "axios";
 import style from "./form.module.css"
 
+//* componente con las opciones para crear un juego nuevo y guardarlo en la DB
 const Form = () => {
     const genres = useSelector((state) => state.genres);
     const dispatch = useDispatch()
@@ -92,7 +93,6 @@ const Form = () => {
                     <div className={style.formSection}>
                         <label className={style.label}>Platforms:
                             <div>
-
                                 <input
                                     value={form.platforms}
                                     type="text"

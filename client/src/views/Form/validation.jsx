@@ -34,11 +34,6 @@ const Validation = (input) => {
             errors.rating = "Rating must be a number between 1 and 5";
         }
     }
-
-    if (input.image && !isValidUrl(input.image)) {
-        errors.image = "Please enter a valid image URL";
-    }
-
     return errors;
 };
 export default Validation;

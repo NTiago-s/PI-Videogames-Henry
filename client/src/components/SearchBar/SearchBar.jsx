@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { getGameByName } from '../../redux/Actions/actions'
 
-
+//* componente para buscar los personajes por nombre
 const SearchBar = () => {
     const dispatch = useDispatch()
     const [searchName, setSearchName] = useState('');
@@ -24,10 +24,6 @@ const SearchBar = () => {
         setSearchName('')
         setErrors('')
     };
-
-
-
-
     return (
         <div className={styles.search}>
             {errors && <p>{errors}</p>}

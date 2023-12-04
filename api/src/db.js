@@ -10,18 +10,17 @@ const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 });
 
+//*ejecucion de las funciones de los modelos
 VideogameFunction(sequelize);
 GenreFunction(sequelize);
 
+//*nombre de los modelos
 const { Videogame, Genre } = sequelize.models;
-
-// Aca vendrian las relaciones
-// Product.hasMany(Reviews);
-
+//* Aca vendrian las relaciones
 Videogame.belongsToMany(Genre, { through: 'VideogameGenre' });
 Genre.belongsToMany(Videogame, { through: 'VideogameGenre' });
 
 module.exports = {
-  ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
-  conn: sequelize,     // para importart la conexión { conn } = require('./db.js');
+  ...sequelize.models, // exportamos los modelos 
+  conn: sequelize,     // exportamos la conexion del conn
 };

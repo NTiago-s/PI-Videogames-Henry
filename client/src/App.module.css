@@ -9,8 +9,6 @@
     "navBar home home"
   ;
   background: linear-gradient(#000, #0008), url('https://images5.alphacoders.com/540/540654.jpg');
-  /* https://images5.alphacoders.com/540/540654.jpg */
-  /* https://images.alphacoders.com/133/1332219.jpeg */
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
@@ -32,4 +30,31 @@ button,
 input {
   outline: none;
   border: none;
+}
+
+
+@media (max-width: 650px) {
+  .appContainer {
+    display: grid;
+    grid-template-columns: 300px 1fr 1fr;
+    grid-template-rows: 120px 1fr 1fr 120px;
+    grid-template-areas:
+      "searchBar searchBar searchBar"
+      "home home home"
+      "home home home"
+      "home home home"
+    ;
+    background: linear-gradient(#000, #0008), url('https://images5.alphacoders.com/540/540654.jpg');
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .navBar {
+    display: none;
+  }
+
 }

@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { getAllVideoGames, paginateGames } from '../../redux/Actions/actions';
 import styles from './Home.module.css'
+
+//* componente con donde se muestran las cartas y los botones del paginado
 const Home = () => {
     const dispatch = useDispatch()
 

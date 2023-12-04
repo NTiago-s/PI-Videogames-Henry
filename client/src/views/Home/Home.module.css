@@ -9,7 +9,13 @@
     padding: 10px;
     font-size: 18px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background: #0f8;
+    background: rgb(87, 244, 250);
     border-radius: 7px;
     cursor: pointer;
+}
+
+@media (max-width: 350px) {
+    .home {
+        margin: 0;
+    }
 }

@@ -13,7 +13,7 @@ import {
 } from '../../redux/Actions/actions'
 import style from './NavBar.module.css'
 
-
+//* componente con los botones , filtros y funciones de la pagina
 const NavBar = () => {
     const genres = useSelector((state) => state.genres);
     const dispatch = useDispatch();

@@ -1,3 +1,4 @@
+//* declaracion de types
 export const GET_ALLVIDEOGAMES = "GET_ALLVIDEOGAMES";
 export const GET_DETAIL = "GET_DETAIL";
 export const GET_GENRES = "GET_GENRES";

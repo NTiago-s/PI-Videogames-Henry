@@ -6,6 +6,9 @@ const {
     findGameByNameController,
 } = require("../../controllers/videoGame/videoGameController");
 
+
+
+//*Handler que recibe la request del id
 const getVideoGameIDHandler = async (req, res) => {
     const { id } = req.params;
     const source = isNaN(id) ? 'db' : 'api';
@@ -17,6 +20,7 @@ const getVideoGameIDHandler = async (req, res) => {
     }
 }
 
+//*Handler que recibe la request del name
 const getVideoGameHandler = async (req, res) => {
     try {
         const { name } = req.query;
@@ -28,7 +32,7 @@ const getVideoGameHandler = async (req, res) => {
         res.status(400).json({ error: error.message });
     }
 }
-
+//*Handler que recibe la request del post
 const postVideoGameHandler = async (req, res) => {
     try {
         const { name, platforms, genres, image, description, released, rating } = req.body;

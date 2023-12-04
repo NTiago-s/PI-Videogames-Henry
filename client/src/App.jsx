@@ -3,6 +3,8 @@ import { Detail, Form, Home, Landing } from "./views/indexViews";
 import style from './App.module.css';
 import NavBar from './components/Navbar/NavBar';
 import SearchBar from './components/SearchBar/SearchBar';
+
+//* componente principal donde surgen el resto y la creacion de las rutas entre componentes
 const App = () => {
   const location = useLocation();
   return (

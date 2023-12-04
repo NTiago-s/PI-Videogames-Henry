@@ -1,5 +1,5 @@
 import { ORDER_ABC, CLEAR_DETAIL, GET_CREATED, GET_DETAIL, GET_GAME_BYNAME, GET_GENRES, GET_NOTCREATED, GET_ALLVIDEOGAMES, PAGINATE, ORDER_RATING, FILTER_GENRES } from "../Actions/actionsTypes";
-
+//* creacion del estado inicial
 const initialStore = {
     videoGames: [],
     pageVideoGames: [],
@@ -9,6 +9,7 @@ const initialStore = {
     currentPage: 0
 };
 
+//* funciones con estados globales
 const Reducer = (state = initialStore, action) => {
     const ITEMS_PAGE = 15;
     switch (action.type) {

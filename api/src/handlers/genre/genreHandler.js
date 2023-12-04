@@ -1,6 +1,7 @@
 const getGenresController = require('../../controllers/Genre/genresController');
 const { Genre } = require('../../db')
 
+//*Handler que recibe la request de los genres
 const getGenreHandler = async (req, res) => {
     try {
         const existGenres = await Genre.findAll();

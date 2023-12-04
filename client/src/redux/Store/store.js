@@ -1,3 +1,4 @@
+//* configuracion del store global
 import { applyMiddleware, compose, createStore } from "redux";
 import Reducer from "../Reducer/reducer";
 import thunkMiddleware from 'redux-thunk'

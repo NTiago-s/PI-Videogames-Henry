@@ -13,31 +13,33 @@ import {
 } from "./actionsTypes";
 import axios from 'axios'
 
+//* funciones peticiones al backend
+
 export const getAllVideoGames = () => {
-    try {
-        return async (dispatch) => {
+    return async (dispatch) => {
+        try {
             const { data } = await axios.get('http://localhost:3001/videogames');
             return dispatch({
                 type: GET_ALLVIDEOGAMES,
                 payload: data,
             })
+        } catch (error) {
+            throw Error({ error: error.message });
         }
-    } catch (error) {
-        throw Error({ error: error.message });
     }
 }
 
 export const getDetail = (id) => {
-    try {
-        return async (dispatch) => {
+    return async (dispatch) => {
+        try {
             const { data } = await axios.get(`http://localhost:3001/videogames/${id}`);
             return dispatch({
                 type: GET_DETAIL,
                 payload: data,
             })
+        } catch (error) {
+            throw Error({ error: error.message });
         }
-    } catch (error) {
-        throw Error({ error: error.message });
     }
 }
 

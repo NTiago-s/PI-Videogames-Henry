@@ -1,13 +1,17 @@
+.boxDetail {
+    margin: 0 10px;
+}
+
 .Detail {
     display: grid;
     text-align: center;
-    grid-template-columns: 300px 1fr 350px;
+    grid-template-columns: 300px 1fr 1fr 350px;
     grid-template-rows: 120px 1fr 1fr 120px;
     grid-template-areas:
-        "name name name"
-        "image image data"
-        "description description description"
-        "description description description"
+        "name name name name"
+        "image image image data"
+        "description description description description"
+        "description description description description"
     ;
 }
 
@@ -21,7 +25,7 @@
 
 .nameBox {
     grid-area: name;
-    margin: 20px;
+    margin: auto;
 }
 
 .name {
@@ -33,6 +37,8 @@
     grid-area: data;
     font-size: 25px;
     margin: 20px;
+    justify-content: center;
+    align-items: center;
     text-align: left;
 }
 
@@ -44,9 +50,20 @@
     margin: 20px;
 }
 
-.genre {
+.genreBox {
     margin: 20px;
 }
+
+.genreSpan {
+    font-size: 14px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 7px;
+    background-color: #07c;
+    margin: 5px;
+}
+
+
 
 .released {
     margin: 20px;
@@ -57,6 +74,13 @@
     margin: 20px;
 }
 
+.ratingSpan {
+    font-size: 14px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 7px;
+    background-color: #07c;
+}
 
 .descriptionBox {
     grid-area: description;

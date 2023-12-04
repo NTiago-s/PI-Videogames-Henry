@@ -1,12 +1,11 @@
 import styles from './Card.module.css'
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 
+//* componente que renderiza las cartas
 const Card = ({ id, name, image, rating }) => {
-    const [girar, setGirar] = useState(false);
     return (
         <div className={styles.container}>
-            <div className={`animacion ${girar ? 'girar' : 'cardContainer'}`} onClick={() => setGirar(!girar)}>
+            <div className={styles.infoContainer}>
                 <div className={styles.imgBox}>
                     <img src={image} alt={name} className={styles.img} />
                 </div>
@@ -19,7 +18,7 @@ const Card = ({ id, name, image, rating }) => {
                     </div>
                     <div className={styles.info}>
                         <Link to={`/detail/${id}`} className={styles.link}>
-                            More Info
+                            See more info
                         </Link>
                     </div>
                 </div>
