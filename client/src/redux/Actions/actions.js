@@ -16,16 +16,16 @@ import axios from 'axios'
 //* funciones peticiones al backend
 
 export const getAllVideoGames = () => {
-    return async (dispatch) => {
-        try {
+    try {
+        return async (dispatch) => {
             const { data } = await axios.get('http://localhost:3001/videogames');
             return dispatch({
                 type: GET_ALLVIDEOGAMES,
                 payload: data,
             })
-        } catch (error) {
-            throw Error({ error: error.message });
         }
+    } catch (error) {
+        throw Error({ error: error.message });
     }
 }
 

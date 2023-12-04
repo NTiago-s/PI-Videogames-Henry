@@ -31,6 +31,7 @@ const AllVideoGames = async () => {
         throw error
     }
 }
+
 //!LO SIGUIENTE COMENTADO ES UNA MEJORA AL CODIGO DE ARRIBA
 // const fetchVideoGames = async (page) => {
 //     try {
@@ -238,6 +239,7 @@ const findGameByNameController = async (name) => {
         const existingGame = await Videogame.findOne({ where: { name } });
         return existingGame;
     } catch (error) {
+        alert('Error al buscar el juego por nombre.')
         throw new Error('Error al buscar el juego por nombre.');
     }
 }
