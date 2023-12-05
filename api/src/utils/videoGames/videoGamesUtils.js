@@ -1,6 +1,4 @@
 //*Funciones de utils para video Games
-
-
 const cleanVideoGame = (arr) =>
     arr.map((data) => {
         return {

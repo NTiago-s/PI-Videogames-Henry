@@ -13,7 +13,7 @@ import {
 } from "./actionsTypes";
 import axios from 'axios'
 
-//* funciones peticiones al backend
+//* funciones peticiones al backend y conexion con el reducer
 export const getAllVideoGames = () => {
     try {
         return async (dispatch) => {

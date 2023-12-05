@@ -87,23 +87,35 @@ const videoGamesNameController = async (name) => {
     }
 }
 
+//* controller que crea los juegos 
 const createNewGameController = async (name, platforms, genres, image, description, released, rating) => {
     try {
         if (!genres.length) {
             throw new Error('You must provide at least one genre');
         }
         const genre = await Genre.findAll({ where: { name: genres } });
-        const imageUrl = image ? image : 'https://t4.ftcdn.net/jpg/04/73/25/49/360_F_473254957_bxG9yf4ly7OBO5I0O5KABlN930GwaMQz.jpg';
-        const newVideoGame = await Videogame.create({
-            name,
-            platforms,
-            image: imageUrl,
-            description,
-            released,
-            rating,
-        });
-        await newVideoGame.addGenres(genre);
-        return newVideoGame;
+        if (image == "") {
+            const newVideoGame = await Videogame.create({
+                name,
+                platforms,
+                description,
+                released,
+                rating,
+            });
+            await newVideoGame.addGenres(genre);
+            return newVideoGame;
+        } else {
+            const newVideoGame = await Videogame.create({
+                name,
+                platforms,
+                image: image,
+                description,
+                released,
+                rating,
+            });
+            await newVideoGame.addGenres(genre);
+            return newVideoGame;
+        }
     } catch (error) {
         throw error;
     }

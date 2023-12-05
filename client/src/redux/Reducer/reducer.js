@@ -84,7 +84,6 @@ const Reducer = (state = initialStore, action) => {
                 pageVideoGames: sortedList,
             };
 
-
         case ORDER_RATING:
             const sortedVideoGames = [...state.pageVideoGames].sort((a, b) => {
                 return action.payload === 'Upward' ? a.rating - b.rating : b.rating - a.rating;
