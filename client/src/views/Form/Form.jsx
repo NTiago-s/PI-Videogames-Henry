@@ -12,6 +12,7 @@ const Form = () => {
     useEffect(() => {
         dispatch(getAllGenres())
     }, []);
+
     const [form, setForm] = useState({
         name: "",
         description: "",
@@ -21,6 +22,7 @@ const Form = () => {
         released: "",
         rating: "",
     });
+
     const [errors, setErrors] = useState({
         name: "",
         description: "",
@@ -94,7 +96,7 @@ const Form = () => {
                                     className={style.input}>
                                 </input>
                             </div>
-                            {errors.name && <p>{errors.name}</p>}
+                            {errors.name && <p className={style.error}>{errors.name}</p>}
                         </label>
                     </div>
 
@@ -109,7 +111,7 @@ const Form = () => {
                                     className={style.input}>
                                 </input>
                             </div>
-                            {errors.platforms && <p>{errors.platforms}</p>}
+                            {errors.platforms && <p className={style.error}>{errors.platforms}</p>}
                         </label>
                     </div>
 
@@ -134,7 +136,7 @@ const Form = () => {
                                     ))}
                                 </select>
                             </div>
-                            {errors.genres && <p>{errors.genres}</p>}
+                            {errors.genres && <p className={style.error}>{errors.genres}</p>}
                         </label>
                     </div>
 
@@ -151,7 +153,7 @@ const Form = () => {
                                     className={style.input}>
                                 </input>
                             </div>
-                            {errors.rating && <p>{errors.rating}</p>}
+                            {errors.rating && <p className={style.error}>{errors.rating}</p>}
                         </label>
                     </div>
 
@@ -167,7 +169,7 @@ const Form = () => {
                                     className={style.input}
                                 />
                             </div>
-                            {errors.image && <p>{errors.image}</p>}
+                            {errors.image && <p className={style.error}>{errors.image}</p>}
                         </label>
                     </div>
 
@@ -184,7 +186,7 @@ const Form = () => {
                                     className={style.input}>
                                 </input>
                             </div>
-                            {errors.released && <p>{errors.released}</p>}
+                            {errors.released && <p className={style.error}>{errors.released}</p>}
                         </label>
                     </div>
 
@@ -199,7 +201,7 @@ const Form = () => {
                                     className={style.textarea}>
                                 </textarea>
                             </div>
-                            {errors.description && <p>{errors.description}</p>}
+                            {errors.description && <p className={style.error}> {errors.description}</p>}
                         </label>
                     </div>
                     <hr />

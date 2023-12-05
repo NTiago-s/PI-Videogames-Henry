@@ -2,7 +2,7 @@ import styles from './Card.module.css'
 import { Link } from 'react-router-dom';
 
 //* componente que renderiza las cartas
-const Card = ({ id, name, image, rating }) => {
+const Card = ({ id, name, image, genres }) => {
     return (
         <div className={styles.container}>
             <div className={styles.infoContainer}>
@@ -13,7 +13,7 @@ const Card = ({ id, name, image, rating }) => {
                     <div className={styles.dataContainer}>
                         <div className={styles.data}>
                             <h2>Name: {name}</h2>
-                            <h2>Rating: {rating}</h2>
+                            <h2>Genres: {genres?.map((genre, index) => <span className={styles.genreSpan} key={index}>{genre} </span>)}</h2>
                         </div>
                     </div>
                     <div className={styles.info}>

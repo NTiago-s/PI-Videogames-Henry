@@ -15,7 +15,6 @@ const SearchBar = () => {
         setSearchName(e.target.value);
     }
 
-
     const searchHand = () => {
         dispatch(getGameByName(searchName))
             .catch((error) => {
@@ -35,8 +34,8 @@ const SearchBar = () => {
                 className={styles.input}
                 placeholder="Search VideoGames"
             />
-            <button className={styles.button}>
-                <FontAwesomeIcon icon={faMagnifyingGlass} onClick={searchHand} className={styles.icon} />
+            <button className={styles.button} onClick={searchHand} >
+                <FontAwesomeIcon icon={faMagnifyingGlass} className={styles.icon} />
             </button>
         </div>
     )

@@ -79,7 +79,7 @@ const videoGamesNameController = async (name) => {
         const { data } = await axios.get(`https://api.rawg.io/api/games?search=${name}&key=${API_KEY}`);
         const response = data.results;
         const apiGame = cleanVideoGame(response);
-        const filterApi = apiGame.filter((game) => game.name.toLowerCase() === name.toLowerCase());
+        const filterApi = apiGame.filter((game) => game.name.toLowerCase().includes(name.toLowerCase()));
         const apiResults = filterApi.slice(0, 15);
         return [...cleanGame, ...apiResults];
     } catch (error) {

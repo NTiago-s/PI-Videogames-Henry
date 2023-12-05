@@ -54,6 +54,10 @@
     min-width: 100%;
 }
 
+.error {
+    color: #c00;
+}
+
 .submit {
     margin: 10px;
     background-color: #4caf50;
