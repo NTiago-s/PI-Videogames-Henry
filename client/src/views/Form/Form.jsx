@@ -30,24 +30,31 @@ const Form = () => {
         released: "",
         rating: "",
     });
+
     const changeHandler = (event) => {
         const property = event.target.name;
         const value = event.target.value;
         if (property === "genres") {
             const genreName = event.target.value;
-            if (!form.genres.includes(genreName)) {
+            if (form.genres.includes(genreName)) {
+                const updatedGenres = form.genres.filter((genre) => genre !== genreName);
+                setForm({
+                    ...form,
+                    genres: updatedGenres
+                });
+            } else {
                 setForm({
                     ...form,
                     genres: [...form.genres, genreName]
                 });
-            };
+            }
             return;
         } else {
             setForm({
                 ...form,
                 [property]: value
             });
-        };
+        }
         setErrors(
             Validation({
                 ...form,
@@ -55,6 +62,7 @@ const Form = () => {
             })
         );
     };
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const validationForm = Validation(form);
@@ -106,20 +114,22 @@ const Form = () => {
                     </div>
 
                     <div className={style.formSection}>
-                        <label className={style.label}>Genres:
+                        <label className={style.label}>
+                            Select Genres:
                             <div>
                                 <select
                                     value={form.genres}
                                     name="genres"
                                     multiple
                                     onChange={changeHandler}
-                                    className={style.select}>
-                                    <option>⬇</option>
+                                    className={style.select}
+                                >
                                     {genres.map((genre) => (
                                         <option
                                             key={genre.id}
-                                            value={genre.name}>
-                                            {genre.name},
+                                            value={genre.name}
+                                        >
+                                            {genre.name}
                                         </option>
                                     ))}
                                 </select>
@@ -127,6 +137,7 @@ const Form = () => {
                             {errors.genres && <p>{errors.genres}</p>}
                         </label>
                     </div>
+
 
                     <div className={style.formSection}>
                         <label className={style.label}>Rating:

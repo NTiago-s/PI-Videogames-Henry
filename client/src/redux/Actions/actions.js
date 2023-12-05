@@ -28,20 +28,6 @@ export const getAllVideoGames = () => {
     }
 }
 
-// export const getAllVideoGames = () => async (dispatch) => {
-//     try {
-//         const response = await axios.get('http://localhost:3001/videogames');
-//         const data = response.data;
-//         dispatch({
-//             type: GET_ALLVIDEOGAMES,
-//             payload: data,
-//         });
-//     } catch (error) {
-//         throw new Error(error.message);
-//     }
-// };
-
-
 export const getDetail = (id) => {
     return async (dispatch) => {
         try {

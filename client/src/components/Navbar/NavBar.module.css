@@ -1,18 +1,40 @@
 .navbar {
     height: auto;
     width: auto;
-    border: 1px solid #fff;
+    border-radius: 10px;
     text-align: center;
     margin-left: 12px;
+    animation: luminoso 2s ease-in-out infinite; 
+}
+
+@keyframes luminoso {
+    0% {
+        border: 2px solid rgba(156, 53, 177, 0.8);
+        box-shadow: 0px 0px 30px rgba(69, 72, 235, 0.8);
+    }
+
+    50% {
+        border: 2px solid rgba(69, 72, 235, 0.8);
+        box-shadow: 0px 0px 35px rgba(13, 245, 214, 0.8);
+    }
+
+    100% {
+        border: 2px solid rgba(13, 245, 214, 0.8);
+        box-shadow: 0px 0px 30px rgba(156, 53, 177, 0.8);
+    }
 }
 
 .links {
     margin: 10px;
+    font-family: a Absolute Empire;
+    font-weight: 100;
 }
 
 .option {
     margin: 20px auto;
     cursor: pointer;
+    font-family: a Absolute Empire;
+    font-weight: 100;
 }
 
 .filterButton {
@@ -23,7 +45,8 @@
     text-align: center;
     background: rgb(87, 244, 250);
     color: #000;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: a Absolute Empire;
+    font-weight: 100;
 }
 
 .filter {
@@ -34,12 +57,15 @@
     text-align: center;
     background: #ddd;
     color: #000;
+    font-family: a Absolute Empire;
+    font-weight: 100;
 }
 
 .H5 {
     margin: 20px auto;
     font-size: 30px;
-    font-family: Super Summmer;
+    font-family: a Absolute Empire;
+    font-weight: 100;
     text-decoration: underline;
 }
 
@@ -47,7 +73,8 @@
     margin: 10px;
     padding: 10px;
     font-size: 18px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: a Absolute Empire;
+    font-weight: 100;
     background: rgb(87, 244, 250);
     border-radius: 7px;
     cursor: pointer;

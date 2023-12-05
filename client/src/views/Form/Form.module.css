@@ -28,18 +28,30 @@
     margin: 20px;
     padding: 10px;
     border-radius: 5px;
+    font-family: a Absolute Empire;
+    font-weight: 100;
 }
 
 .select {
     font-size: 18px;
     background-color: #ddd;
     color: #000;
+    font-family: a Absolute Empire;
+    font-weight: 100;
 }
 
 .textarea {
     font-size: 18px;
     background-color: #ddd;
     color: #000;
+    font-family: a Absolute Empire;
+    font-weight: 100;
+
+    padding: 9px;
+    max-height: 900px;
+    min-height: 201px;
+    max-width: 100%;
+    min-width: 100%;
 }
 
 .submit {
@@ -51,4 +63,6 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-family: a Absolute Empire;
+    font-weight: 100;
 }

@@ -17,12 +17,17 @@
     box-sizing: border-box;
     padding: 20px;
     margin: 0;
+    font-family: a Absolute Empire;
+    font-weight: 100;
 }
 
 .input::placeholder {
     color: rgb(87, 244, 250);
     font-size: 20px;
+    font-family: a Absolute Empire;
+    font-weight: 100;
     letter-spacing: 3px;
+
 }
 
 .button {

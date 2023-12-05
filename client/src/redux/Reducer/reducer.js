@@ -72,41 +72,28 @@ const Reducer = (state = initialStore, action) => {
             };
 
         case ORDER_ABC:
-            let sortedList = [...state.pageVideoGames].sort((a, b) => {
+            const sortedList = [...state.pageVideoGames].sort((a, b) => {
                 const nameA = a.name.toLowerCase();
                 const nameB = b.name.toLowerCase();
-                if (action.payload === 'Ascendente') {
-                    return nameA.localeCompare(nameB);
-                } else if (action.payload === 'Descen') {
-                    return nameB.localeCompare(nameA);
-                }
+                return action.payload === 'Ascendente' ? nameA.localeCompare(nameB) : nameB.localeCompare(nameA);
             });
+            const pageVideoGames = sortedList.slice(0, ITEMS_PAGE);
             return {
                 ...state,
-                videoGames: sortedList.splice(0, ITEMS_PAGE),
-                pageVideoGames: sortedList
+                videoGames: pageVideoGames,
+                pageVideoGames: sortedList,
             };
 
+
         case ORDER_RATING:
-            let sortedRating = [...state.pageVideoGames].sort((a, b) => {
-                if (action.payload === 'Upward') {
-                    return a.rating - b.rating;
-                } else if (action.payload === 'Falling') {
-                    return b.rating - a.rating;
-                };
+            const sortedVideoGames = [...state.pageVideoGames].sort((a, b) => {
+                return action.payload === 'Upward' ? a.rating - b.rating : b.rating - a.rating;
             });
-            if (Object.keys(sortedRating).length <= 15) {
-                return {
-                    ...state,
-                    videoGames: sortedRating,
-                    pageVideoGames: sortedRating
-                };
-            } else {
-                return {
-                    ...state,
-                    videoGames: sortedRating.splice(0, ITEMS_PAGE),
-                    pageVideoGames: sortedRating
-                };
+            const pagedVideoGames = sortedVideoGames.slice(0, ITEMS_PAGE);
+            return {
+                ...state,
+                videoGames: pagedVideoGames,
+                pageVideoGames: sortedVideoGames,
             };
 
         case PAGINATE:
@@ -114,13 +101,14 @@ const Reducer = (state = initialStore, action) => {
             const prevPage = state.currentPage - 1;
             const firstIndex = action.payload === "next" ? nextPage * ITEMS_PAGE : prevPage * ITEMS_PAGE;
             if (action.payload === 'next' && firstIndex >= state.pageVideoGames.length) {
-                return state
+                return state;
             } else if (action.payload === "prev" && prevPage < 0) {
-                return state
-            };
+                return state;
+            }
+            const pagVideoGames = [...state.pageVideoGames].slice(firstIndex, firstIndex + ITEMS_PAGE);
             return {
                 ...state,
-                videoGames: [...state.pageVideoGames].splice(firstIndex, ITEMS_PAGE),
+                videoGames: pagVideoGames,
                 currentPage: action.payload === "next" ? nextPage : prevPage,
             };
         default:

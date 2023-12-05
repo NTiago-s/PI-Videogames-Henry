@@ -11,6 +11,8 @@ import {
     alphabeticalOrder,
     filterGames
 } from '../../redux/Actions/actions'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRightFromBracket, faHouse } from "@fortawesome/free-solid-svg-icons";
 import style from './NavBar.module.css'
 
 //* componente con los botones , filtros y funciones de la pagina
@@ -47,8 +49,11 @@ const NavBar = () => {
     return (
         <div className={style.navbar}>
             <div className={style.links}>
+                <Link to="/">
+                    <button className={style.button}>Landing <FontAwesomeIcon icon={faRightFromBracket} /></button>
+                </Link>
                 <Link to="/home" >
-                    <button className={style.button}>Home</button>
+                    <button className={style.button}> Home <FontAwesomeIcon icon={faHouse} /></button>
                 </Link>
                 <br />
                 <Link to="/form">
