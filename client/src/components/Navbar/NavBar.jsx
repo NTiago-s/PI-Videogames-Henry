@@ -39,7 +39,7 @@ const NavBar = () => {
         dispatch(getAllVideoGames());
     };
 
-    const handleSort = (event) => {
+    const handleABC = (event) => {
         dispatch(alphabeticalOrder(event.target.value));
     };
 
@@ -84,7 +84,7 @@ const NavBar = () => {
                 </select>
             </div>
             <div className={style.option}>
-                <select name="alphabetical" placeholder="Alphabetical" onChange={handleSort} className={style.filter}>
+                <select name="alphabetical" placeholder="Alphabetical" onChange={handleABC} className={style.filter}>
                     <option value=''>Filter by name</option>
                     <option value='Descendente'>Z-A</option>
                     <option value='Ascendente'>A-Z</option>

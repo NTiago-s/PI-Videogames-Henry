@@ -183,7 +183,10 @@ const Form = () => {
                                     name="released"
                                     autoComplete="off"
                                     onChange={changeHandler}
-                                    className={style.input}>
+                                    className={style.input}
+                                    min="1950-01-01"
+                                    max="2025-12-31"
+                                    required>
                                 </input>
                             </div>
                             {errors.released && <p className={style.error}>{errors.released}</p>}
